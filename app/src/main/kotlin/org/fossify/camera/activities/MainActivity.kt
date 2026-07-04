@@ -669,6 +669,7 @@ class MainActivity : SimpleActivity(), PhotoProcessor.MediaSavedListener, Camera
             layoutTop.toggleFlash,
             layoutTop.changeResolution,
             shutter,
+            timerText,
             layoutTop.settings,
             lastPhotoVideoPreview,
             layoutTimer.timerOff,
@@ -990,6 +991,11 @@ class MainActivity : SimpleActivity(), PhotoProcessor.MediaSavedListener, Camera
     private fun scheduleTimer(timerMode: TimerMode) {
         hideViewsOnTimerStart()
         binding.shutter.setImageState(intArrayOf(R.attr.state_timer_cancel), true)
+        binding.timerText.rotation = when (mLastHandledOrientation) {
+            ORIENT_LANDSCAPE_LEFT -> 90
+            ORIENT_LANDSCAPE_RIGHT -> -90
+            else -> 0
+        }.toFloat()
         binding.timerText.beVisible()
         var playSound = true
         countDownTimer = object : CountDownTimer(timerMode.millisInFuture, 1000) {

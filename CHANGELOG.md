@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Fixed the countdown timer digits not rotating to match device orientation ([#91])
 
 ## [1.5.0] - 2026-01-30
 ### Added
@@ -72,6 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release
 
 [#20]: https://github.com/FossifyOrg/Camera/issues/20
+[#91]: https://github.com/FossifyOrg/Camera/issues/91
 [#97]: https://github.com/FossifyOrg/Camera/issues/97
 [#157]: https://github.com/FossifyOrg/Camera/issues/157
 [#177]: https://github.com/FossifyOrg/Camera/issues/177
