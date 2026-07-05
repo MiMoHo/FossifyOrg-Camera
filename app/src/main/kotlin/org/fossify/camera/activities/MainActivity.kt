@@ -571,6 +571,7 @@ class MainActivity : SimpleActivity(), PhotoProcessor.MediaSavedListener, Camera
             if (isPhoto) MediaStore.Images.Media.EXTERNAL_CONTENT_URI else MediaStore.Video.Media.EXTERNAL_CONTENT_URI
         val lastMediaId = getLatestMediaId(uri)
         if (lastMediaId == 0L) {
+            clearLastMediaPreview()
             return
         }
 
@@ -592,6 +593,16 @@ class MainActivity : SimpleActivity(), PhotoProcessor.MediaSavedListener, Camera
                     .apply(options)
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(binding.lastPhotoVideoPreview)
+            }
+        }
+    }
+
+    private fun clearLastMediaPreview() {
+        mPreviewUri = null
+        runOnUiThread {
+            if (!isDestroyed) {
+                Glide.with(this).clear(binding.lastPhotoVideoPreview)
+                binding.lastPhotoVideoPreview.setImageDrawable(null)
             }
         }
     }

@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Fixed the last-media preview thumbnail staying visible (and showing an error toast when tapped) after all photos/videos were deleted from the device. ([#186])
 
 ## [1.5.0] - 2026-01-30
 ### Added
@@ -75,6 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#97]: https://github.com/FossifyOrg/Camera/issues/97
 [#157]: https://github.com/FossifyOrg/Camera/issues/157
 [#177]: https://github.com/FossifyOrg/Camera/issues/177
+[#186]: https://github.com/FossifyOrg/Camera/issues/186
 [#234]: https://github.com/FossifyOrg/Camera/issues/234
 
 [Unreleased]: https://github.com/FossifyOrg/Camera/compare/1.5.0...HEAD
